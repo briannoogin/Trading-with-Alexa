@@ -1,7 +1,11 @@
 {
     "interactionModel": {
         "languageModel": {
+<<<<<<< HEAD
+            "invocationName": "give random state",
+=======
             "invocationName": "madhav_test",
+>>>>>>> 15ab78bd0d56cd84d78a3307a653dce59f76acc8
             "intents": [
                 {
                     "name": "AMAZON.FallbackIntent",
@@ -9,6 +13,17 @@
                 },
                 {
                     "name": "AMAZON.CancelIntent",
+<<<<<<< HEAD
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+=======
                     "samples": [
                         "scratch that",
                         "forget it",
@@ -46,12 +61,26 @@
                         "hold that thought",
                         "hold"
                     ]
+>>>>>>> 15ab78bd0d56cd84d78a3307a653dce59f76acc8
                 },
                 {
                     "name": "AMAZON.NavigateHomeIntent",
                     "samples": []
                 },
                 {
+<<<<<<< HEAD
+                    "name": "RandomState",
+                    "slots": [
+                        {
+                            "name": "state",
+                            "type": "AMAZON.US_STATE"
+                        }
+                    ],
+                    "samples": [
+                        "{state}",
+                        "{us_state}",
+                        "Give a random {state}"
+=======
                     "name" : "StockInfoIntent",
                     "slots" : [
                         {
@@ -133,6 +162,7 @@
                         "How is {company} trending?",
                         "What was the high of {company}?",
                         "What was the low of {company}?"
+>>>>>>> 15ab78bd0d56cd84d78a3307a653dce59f76acc8
                     ]
                 }
             ],
