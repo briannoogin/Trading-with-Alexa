@@ -103,19 +103,23 @@ class CatchAllExceptionsHandler(AbstractExceptionHandler):
 class GetQuoteHandler(AbstractRequestHandler):
     # Handler for Quote Intent
     def can_handle(self, handler_input):
-        # type (HandlerInput) bool
+        # type: (HandlerInput) -> bool
         return is_intent_name("quote")(handler_input)
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        logger.info("In GetQuoteHandler")
+        quote = util.get_resolved_value(handler_input.request_envelope.request, "symbol")
 
 class GetNewsHandler(AbstractRequestHandler):
     # Handler for News Intent
     def can_handle(self, handler_input):
-        # type (HandlerInput) bool
+        # type: (HandlerInput) -> bool
         return is_intent_name("news")(handler_input)
 
 class GetKeyStatHandler(AbstractRequestHandler):
     # Handler for Key Stats Intent
     def can_handle(self, handler_input):
-        # type (HandlerInput) bool
+        # type: (HandlerInput) -> bool
         return is_intent_name("keystats")(handler_input)
 
 class GetPriceHandler(AbstractRequestHandler):
@@ -124,13 +128,12 @@ class GetPriceHandler(AbstractRequestHandler):
         # type (HandlerInput) bool
         return is_intent_name("price")(handler_input)
 
-# Request Logger
 class RequestLogger(AbstractRequestInterceptor):
     # Log Alexa Requests
     def process(self, handler_input):
         # type (HandlerInput) None
         logger.debug("Alexa Request: {}".format(handler_input.request_envelope.request))
-# Response Logger
+
 class ResponseLogger(AbstractResponseInterceptor):
     # Log Alexa Responses
     def process(self, handler_input, response):
