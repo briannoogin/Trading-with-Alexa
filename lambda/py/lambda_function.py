@@ -1,27 +1,19 @@
+# Import relevant modules
 import json
 import logging
-
+from alexa import data, util
 from ask_sdk_core.skill_builder import SkillBuilder
 from ask_sdk_core.handler_input import HandlerInput
-from ask_sdk_core.serialize import DefaultSerializer
 from ask_sdk_core.dispatch_components import (
     AbstractRequestHandler, AbstractExceptionHandler,
     AbstractResponseInterceptor, AbstractRequestInterceptor)
 from ask_sdk_core.utils import is_intent_name, is_request_type
-from ask_sdk_core.response_helper import (
-    get_plain_text_content, get_rich_text_content)
-
-from ask_sdk_model.interfaces.display import (
-    ImageInstance, Image, RenderTemplateDirective, ListTemplate1,
-    BackButtonBehavior, ListItem, BodyTemplate2, BodyTemplate1)
-from ask_sdk_model import ui, Response
-
-from alexa import data, util
-
+from ask_sdk_model import Response
 
 # Skill Builder Object
 skill = SkillBuilder()
 
+# Initialize logger
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
