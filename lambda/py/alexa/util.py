@@ -67,7 +67,7 @@ def get_stock_price(stock_symbol):
 
 # (INCORRECT, FIX!!) Return the stock ticker symbol of a company
 def get_stock_symbol(company_Name):
-    symbol = "AAPLE"
+    symbol = "AAPL"
     return symbol
 
 # Resolve the slot name from the request
