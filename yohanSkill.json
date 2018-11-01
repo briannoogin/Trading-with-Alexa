@@ -1,0 +1,172 @@
+{
+    "interactionModel": {
+        "languageModel": {
+<<<<<<< HEAD
+            "invocationName": "give random state",
+=======
+            "invocationName": "madhav_test",
+>>>>>>> 15ab78bd0d56cd84d78a3307a653dce59f76acc8
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+<<<<<<< HEAD
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+=======
+                    "samples": [
+                        "scratch that",
+                        "forget it",
+                        "never mind",
+                        "cancel"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "can you help me",
+                        "help me",
+                        "help",
+                        "I need some help"
+                    ]
+                }, 
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "stop yapping",
+                        "quit your yapping",
+                        "shut your trap",
+                        "shut it",
+                        "quiet",
+                        "shut up",
+                        "stop"
+                    ]
+                },
+                {
+                    "name" : "AMAZON.PauseIntent",
+                    "samples" : [
+                        "wait",
+                        "pause",
+                        "wait a minute",
+                        "hold that thought",
+                        "hold"
+                    ]
+>>>>>>> 15ab78bd0d56cd84d78a3307a653dce59f76acc8
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+<<<<<<< HEAD
+                    "name": "RandomState",
+                    "slots": [
+                        {
+                            "name": "state",
+                            "type": "AMAZON.US_STATE"
+                        }
+                    ],
+                    "samples": [
+                        "{state}",
+                        "{us_state}",
+                        "Give a random {state}"
+=======
+                    "name" : "StockInfoIntent",
+                    "slots" : [
+                        {
+                            "name": "company",
+                            "type" : "AMAZON.Corporation"
+                        },
+                        {
+                            "name" : "exchange",
+                            "type:" : "AMAZON.Organization"
+                        },
+                        {
+                            "name" : "date",
+                            "type" : "AMAZON.DATE"
+                        },
+                        {
+                            "name" : "specificTime",
+                            "type" : "AMAZON.TIME"
+                        },
+                        {
+                            "name" : "specificDurartion",
+                            "type" : "AMAZON.DURATION"
+                        }
+                    ],
+                    "samples" : [
+                        "{company}",
+                        "{exchange}",
+                        "{date}",
+                        "{specificTime}",
+                        "{specificDuration}",
+                        
+                        "{exchange} information.",
+                        "How is the {exchange} doing?",
+                        "How is the {exchange} doing today?",
+                        "How is the {exchange} doing {date}?",
+                        "How has the {exchange} done {date}?",
+                        "How has the {exchange} been doing?",
+                        "How did the {exchange} look at {specificTime}?",
+                        "How did the {exchange} look {specificDuration} ago?",
+                        "How did the {exchange} do {date}?",
+                        "What does the {exchange} look like {date}?",
+                        "What happened with the {exchange} in the last {specificDuration}?",
+                        "What did the {exchange} look like {specificDuration} ago?",
+                        "Tell me about {exchange}.",
+                        "Tell me how {exchange} did {specificDuration} ago",
+                        "Tell me how {exchange} did at {specificTime}.",
+                        "Tell me how {exchange} did {date}.",
+                        "Give me a summary of {exchange} performance.",
+                        "Give me a summary of {exchange} performance on {date}",
+                        "Give me a summary of {exchange} performance in {date}",
+                        "How many points did {exchange} drop {date}?",
+                        "How many points did {exchange} drop today?",
+                        "How many points did {exchange} gain today?",
+                        "How many points did {exchange} gain {date}?",
+                        "How is {exchange} trending?",
+                        "What was the high of {exchange}?",
+                        "What was the low of {exchange}?",
+                        
+                        "{company} information",
+                        "How is {company} doing?",
+                        "How is {company} doing {date}?",
+                        "How has {company} done {date}?",
+                        "How has {company} been doing?",
+                        "How did company} look at {specificTime}?",
+                        "How did {company} look {specificDuration} ago?",
+                        "How did {company} do {date}?",
+                        "What does {company} look like {date}?",
+                        "What happened with {company} in the last {specificDuration}",
+                        "What did {company} look like {specificDuration} ago?",
+                        "Tell me about {company}.",
+                        "Tell me how {company} did {specificDuration} ago.",
+                        "Tell me how {company} did at {specificTime}.",
+                        "Tell me how {company} did {date}.",
+                        "Give me a summary of {company} performance on {date}.",
+                        "Give me a summary of {company} performance in {date}.",
+                        "How many points did {company} drop today?",
+                        "How many points did {company} drop {date}?",
+                        "How many points did {company} gain {date}?",
+                        "How many points did {company} gain today?",
+                        "How is {company} trending?",
+                        "What was the high of {company}?",
+                        "What was the low of {company}?"
+>>>>>>> 15ab78bd0d56cd84d78a3307a653dce59f76acc8
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
