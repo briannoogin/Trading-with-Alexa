@@ -57,60 +57,60 @@
                     "name": "quote",
                     "slots": [
                         {
-                            "name": "symbol",
+                            "name": "company",
                             "type": "AMAZON.Corporation"
                         }
                     ],
                     "samples": [
-                        "how is {symbol} doing",
-                        "give me information on {symbol} ",
-                        "tell me about {symbol} "
+                        "how is {company} doing",
+                        "give me information on {company} ",
+                        "tell me about {company} "
                     ]
                 },
                 {
                     "name": "news",
                     "slots": [
                         {
-                            "name": "symbol",
+                            "name": "company",
                             "type": "AMAZON.Corporation"
                         }
                     ],
                     "samples": [
-                        "news {symbol}",
-                        "news on {symbol}",
-                        "give me the latest news on {symbol} ",
-                        "can you give me news on {symbol} "
+                        "news {company}",
+                        "news on {company}",
+                        "give me the latest news on {company} ",
+                        "can you give me news on {company} "
                     ]
                 },
                 {
                     "name": "keystats",
                     "slots": [
                         {
-                            "name": "symbol",
+                            "name": "company",
                             "type": "AMAZON.Corporation"
                         }
                     ],
                     "samples": [
-                        "key stats on {symbol}",
-                        "give me key stats on {symbol}",
-                        "what are the key stats on {symbol} stock",
-                        "give me key stats on {symbol} stock",
-                        "give me the numbers on {symbol}"
+                        "key stats on {company}",
+                        "give me key stats on {company}",
+                        "what are the key stats on {company} stock",
+                        "give me key stats on {company} stock",
+                        "give me the numbers on {company}"
                     ]
                 },
                 {
                     "name": "price",
                     "slots": [
                         {
-                            "name": "symbol",
+                            "name": "company",
                             "type": "AMAZON.Corporation"
                         }
                     ],
                     "samples": [
-                        "price {symbol}",
-                        "price of {symbol}",
-                        "price of {symbol} stock",
-                        "what is the price of {symbol} stock"
+                        "price {company}",
+                        "price of {company}",
+                        "price of {company} stock",
+                        "what is the price of {company} stock"
                     ]
                 }
             ],
