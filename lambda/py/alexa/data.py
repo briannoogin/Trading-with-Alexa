@@ -1,0 +1,10 @@
+# Standard Alexa Messages
+SKILL_NAME = "Stock Informing"
+WELCOME_MESSAGE = "Welcome to Sock Informing with Alexa! This skill helps inform the user of the current state of a company's stock."
+STOCK_INFO_MESSAGE = "Here's your stock info: "
+HELP_MESSAGE  = "You can ask me to give you a quote, news, key stats, and/or price on a company's stock. Or you can say exit."
+HELP_PROMPT = "What can I help you with?"
+STOP_MESSAGE = "Goodbye!"
+FALLBACK_MESSAGE = "The Stock Informing skill can't help with that. It can inform you on varying levels of information on a company's stock"
+FALLBACK_PROMPT = "What can I help you with?"
+EXCEPTION_MESSAGE  = "Sorry. I cannot help you with that."
