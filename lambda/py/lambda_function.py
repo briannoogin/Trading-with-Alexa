@@ -23,6 +23,7 @@ class LaunchRequestHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
         return is_request_type("LaunchRequest")(handler_input)
+
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In LaunchRequestHandler")
@@ -34,6 +35,7 @@ class HelpIntentHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
         return is_intent_name("AMAZON.HelpIntent")(handler_input)
+
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In HelpIntentHandler")
@@ -50,6 +52,7 @@ class CancelorStoporPauseIntentHandler(AbstractRequestHandler):
         return (is_intent_name("AMAZON.CancelIntent")(handler_input) or 
                 is_intent_name("AMAZON.StopIntent")(handler_input) or
                 is_intent_name("AMAZON.PauseIntent")(handler_input))
+
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In CancelorStoporPauseIntentHandler")
@@ -73,6 +76,7 @@ class SessionEndedRequestHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
         return is_request_type("SessionEndedRequest")(handler_input)
+
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In SessionEndedRequestHandler")
@@ -84,6 +88,7 @@ class CatchAllExceptionsHandler(AbstractExceptionHandler):
     def can_handle(self, handler_input, exception):
         # type: (HandlerInput, exception) -> bool
         return True
+
     def handle(self, handler_input, exception):
         # type: (HandlerInput, exception) -> Response
         logger.info("In CatchAllExceptionsHandler")
@@ -97,6 +102,7 @@ class GetQuoteHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
         return is_intent_name("quote")(handler_input)
+
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In GetQuoteHandler")
@@ -113,6 +119,7 @@ class GetNewsHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
         return is_intent_name("news")(handler_input)
+
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In GetNewsHandler")
@@ -128,6 +135,7 @@ class GetKeyStatHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
         return is_intent_name("keystats")(handler_input)
+
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In GetKeyStatHandler")
@@ -146,6 +154,7 @@ class GetPriceHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
         return is_intent_name("price")(handler_input)
+        
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In GetPriceHandler")
