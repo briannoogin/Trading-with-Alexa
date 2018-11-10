@@ -15,7 +15,7 @@ skill = SkillBuilder()
 
 # Initialize logger
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
 # Built-In Intent Handlers
 class LaunchRequestHandler(AbstractRequestHandler):
@@ -39,9 +39,6 @@ class HelpIntentHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In HelpIntentHandler")
-        handler_input.attributes_manager.session_attributes = {}
-        # Resetting session
-
         handler_input.response_builder.speak(data.HELP_MESSAGE).ask(data.HELP_PROMPT)
         return handler_input.response_builder.response
 
@@ -101,7 +98,7 @@ class GetQuoteHandler(AbstractRequestHandler):
     # Handler for Quote Intent
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return is_intent_name("quote")(handler_input)
+        return is_intent_name("QuoteIntent")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
@@ -118,7 +115,7 @@ class GetNewsHandler(AbstractRequestHandler):
     # Handler for News Intent
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return is_intent_name("news")(handler_input)
+        return is_intent_name("NewsIntent")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
@@ -134,7 +131,7 @@ class GetKeyStatHandler(AbstractRequestHandler):
     # Handler for Key Stats Intent
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return is_intent_name("keystats")(handler_input)
+        return is_intent_name("KeyStatsIntent")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
@@ -153,7 +150,7 @@ class GetPriceHandler(AbstractRequestHandler):
     # Handler for Price Intent
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return is_intent_name("price")(handler_input)
+        return is_intent_name("PriceIntent")(handler_input)
         
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
@@ -161,7 +158,7 @@ class GetPriceHandler(AbstractRequestHandler):
         company = util.get_resolved_value(handler_input.request_envelope.request, "company")
         symbol = util.get_stock_symbol(company)
         price = util.get_stock_price(symbol)
-        message = data.PRICE_MESSAGE.format(price['price'])
+        message = data.PRICE_MESSAGE.format(company, price['price'])
         handler_input.response_builder.speak(message)
         return handler_input.response_builder.response
 
