@@ -42,7 +42,7 @@ class HelpIntentHandler(AbstractRequestHandler):
         handler_input.response_builder.speak(data.HELP_MESSAGE).ask(data.HELP_PROMPT)
         return handler_input.response_builder.response
 
-class CancelorStoporPauseIntentHandler(AbstractRequestHandler):
+class ExitIntentHandler(AbstractRequestHandler):
     # Handler for Cancel, Pause, or Stop Intents
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
@@ -94,7 +94,7 @@ class CatchAllExceptionsHandler(AbstractExceptionHandler):
         return handler_input.response_builder.response
 
 # Custom Intent Handlers
-class GetQuoteHandler(AbstractRequestHandler):
+class QuoteIntentHandler(AbstractRequestHandler):
     # Handler for Quote Intent
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
@@ -111,7 +111,7 @@ class GetQuoteHandler(AbstractRequestHandler):
         handler_input.response_builder.speak(message)
         return handler_input.response_builder.response
 
-class GetNewsHandler(AbstractRequestHandler):
+class NewsIntentHandler(AbstractRequestHandler):
     # Handler for News Intent
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
@@ -127,7 +127,7 @@ class GetNewsHandler(AbstractRequestHandler):
         handler_input.response_builder.speak(message)
         return handler_input.response_builder.response
 
-class GetKeyStatHandler(AbstractRequestHandler):
+class KeyStatsIntentHandler(AbstractRequestHandler):
     # Handler for Key Stats Intent
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
@@ -146,7 +146,7 @@ class GetKeyStatHandler(AbstractRequestHandler):
         handler_input.response_builder.speak(message)
         return handler_input.response_builder.response
 
-class GetPriceHandler(AbstractRequestHandler):
+class PriceIntentHandler(AbstractRequestHandler):
     # Handler for Price Intent
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
@@ -177,13 +177,13 @@ class ResponseLogger(AbstractResponseInterceptor):
 # Register all request handlers to the skill
 skill.add_request_handler(LaunchRequestHandler())
 skill.add_request_handler(HelpIntentHandler())
-skill.add_request_handler(CancelorStoporPauseIntentHandler())
+skill.add_request_handler(ExitIntentHandler())
 skill.add_request_handler(FallbackIntentHandler())
 skill.add_request_handler(SessionEndedRequestHandler())
-skill.add_request_handler(GetQuoteHandler())
-skill.add_request_handler(GetNewsHandler())
-skill.add_request_handler(GetKeyStatHandler())
-skill.add_request_handler(GetPriceHandler())
+skill.add_request_handler(QuoteIntentHandler())
+skill.add_request_handler(NewsIntentHandler())
+skill.add_request_handler(KeyStatsIntentHandler())
+skill.add_request_handler(PriceIntentHandler())
 
 # Register exception handler to the skill
 skill.add_exception_handler(CatchAllExceptionsHandler())
