@@ -1,10 +1,14 @@
+#Technically this program will take in the json file that was created as a response to the user
+#in the lambda function.
+
 #different scenarios to try:
 # the table doesn't exist -> create it -> store new item
 # the table exists -> load it -> store new item
 # the table exits -> load it -> item does not exist -> create new item -> store item
 
-
+import json
 import boto3 #import functionality for dynamodb
+import requests
 
 dynamodb = boto3.resource('dynamodb')
 #TODO: Find if keyName item exists in the table
@@ -16,11 +20,12 @@ def itemExists(tableName,keyName):
         }
         )
         return True
+    #if it cannot fetch the item (because it doesn't exist)
     except dynamodb.exceptions.DynamoDBKeyNotFoundError:
         return False
     return False
 
-#TODO: create item to then store
+#TODO: create item to then store inside the table
 def createItem(table,stockName,time,price,quantity):
     table.put_item(
     Item={
@@ -30,10 +35,7 @@ def createItem(table,stockName,time,price,quantity):
         'quantity': quantity
     }
     )
-)
-
-
-#TODO: Find out what parameters need to be passed
+#creates the StockData table. Only needs to be done once.
 def createTable():
     table = dynamodb.create_table(
     TableName='StockData',
@@ -74,16 +76,21 @@ def createTable():
     )
     return table
 
+#
+def convertJSON(jsonFile){
+    #CALL IEX ON HERE
+}
 
 #parameters should include the item we want to update
-def updateTable():
+def updateTable(table):
     #when the table is already created we simply use it
     table = dynamodb.Table('StockData')
 
-
-#TODO: Figure out if we need to create a new item or if we need to update values
-try:
-    createTable()
-except dynamodb.exceptions.ResourceInUseException:
-    #if the table already exists then update it with the appropriate values
-    print("call function")
+def main():
+    try:
+        #if the table does not exist, create it, then return it
+        table=createTable()
+        createItem(table,)
+    except dynamodb.exceptions.ResourceInUseException:
+        #if the table already exists then add item to directly to the table
+        print("hi")
