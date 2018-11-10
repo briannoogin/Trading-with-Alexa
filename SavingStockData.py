@@ -7,17 +7,31 @@
 import boto3 #import functionality for dynamodb
 
 dynamodb = boto3.resource('dynamodb')
-#TODO: Find if item exists in the table
-def itemExists(keyName):
+#TODO: Find if keyName item exists in the table
+def itemExists(tableName,keyName):
     try:
-        response = table.get_item(
+        tableName.get_item(
         Key={
-            'StockName': 'janedoe'
+            'StockName': keyName
         }
         )
-    except boto.dynamodb.exceptions.DynamoDBKeyNotFoundError:
-        item = None
-    return "your mom"
+        return True
+    except dynamodb.exceptions.DynamoDBKeyNotFoundError:
+        return False
+    return False
+
+#TODO: create item to then store
+def createItem(table,stockName,time,price,quantity):
+    table.put_item(
+    Item={
+        'StockName': stockName,
+        'Time': time,
+        'Price': price,
+        'quantity': quantity
+    }
+    )
+)
+
 
 #TODO: Find out what parameters need to be passed
 def createTable():
@@ -57,7 +71,9 @@ def createTable():
         'ReadCapacityUnits': 15,
         'WriteCapacityUnits': 15
     }
-)
+    )
+    return table
+
 
 #parameters should include the item we want to update
 def updateTable():
@@ -68,6 +84,6 @@ def updateTable():
 #TODO: Figure out if we need to create a new item or if we need to update values
 try:
     createTable()
-except dynamodb_client.exceptions.ResourceInUseException:
+except dynamodb.exceptions.ResourceInUseException:
     #if the table already exists then update it with the appropriate values
     print("call function")
