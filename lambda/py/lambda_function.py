@@ -15,7 +15,7 @@ skill = SkillBuilder()
 
 # Initialize logger
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
 # Built-In Intent Handlers
 class LaunchRequestHandler(AbstractRequestHandler):
@@ -161,7 +161,7 @@ class GetPriceHandler(AbstractRequestHandler):
         company = util.get_resolved_value(handler_input.request_envelope.request, "company")
         symbol = util.get_stock_symbol(company)
         price = util.get_stock_price(symbol)
-        message = data.PRICE_MESSAGE.format(price['price'])
+        message = data.PRICE_MESSAGE.format(company, price['price'])
         handler_input.response_builder.speak(message)
         return handler_input.response_builder.response
 
