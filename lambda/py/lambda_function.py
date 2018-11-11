@@ -27,7 +27,7 @@ class LaunchRequestHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In LaunchRequestHandler")
-        handler_input.response_builder.speak(data.WELCOME_MESSAGE)
+        handler_input.response_builder.speak(data.WELCOME_MESSAGE).set_should_end_session(False)
         return handler_input.response_builder.response
 
 class HelpIntentHandler(AbstractRequestHandler):
@@ -53,7 +53,7 @@ class ExitIntentHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In CancelorStoporPauseIntentHandler")
-        handler_input.response_builder.speak(data.STOP_MESSAGE)
+        handler_input.response_builder.speak(data.STOP_MESSAGE).set_should_end_session(True)
         return handler_input.response_builder.response
 
 class FallbackIntentHandler(AbstractRequestHandler):
@@ -176,14 +176,14 @@ class ResponseLogger(AbstractResponseInterceptor):
 
 # Register all request handlers to the skill
 skill.add_request_handler(LaunchRequestHandler())
-skill.add_request_handler(HelpIntentHandler())
-skill.add_request_handler(ExitIntentHandler())
-skill.add_request_handler(FallbackIntentHandler())
-skill.add_request_handler(SessionEndedRequestHandler())
 skill.add_request_handler(QuoteIntentHandler())
 skill.add_request_handler(NewsIntentHandler())
 skill.add_request_handler(KeyStatsIntentHandler())
 skill.add_request_handler(PriceIntentHandler())
+skill.add_request_handler(HelpIntentHandler())
+skill.add_request_handler(ExitIntentHandler())
+skill.add_request_handler(FallbackIntentHandler())
+skill.add_request_handler(SessionEndedRequestHandler())
 
 # Register exception handler to the skill
 skill.add_exception_handler(CatchAllExceptionsHandler())
