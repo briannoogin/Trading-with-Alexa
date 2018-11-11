@@ -105,7 +105,7 @@ class QuoteIntentHandler(AbstractRequestHandler):
         logger.info("In GetQuoteHandler")
         company = util.get_resolved_value(handler_input.request_envelope.request, "company")
         symbol = util.get_stock_symbol(company)
-        quote = util.get_stock_quote(symbol)
+        quote = util.get_stock_quote(symbol).json()
         message = data.QUOTE_MESSAGE.format(quote['symbol'], quote['name'], quote['sector'], quote['primary_exchange'], 
             quote['open_price'], quote['current_price'], quote['change_percentage'])
         handler_input.response_builder.speak(message)
@@ -122,7 +122,7 @@ class NewsIntentHandler(AbstractRequestHandler):
         logger.info("In GetNewsHandler")
         company = util.get_resolved_value(handler_input.request_envelope.request, "company")
         symbol = util.get_stock_symbol(company)
-        news = util.get_stock_news(symbol)
+        news = util.get_stock_news(symbol).json()
         message = data.NEWS_MESSAGE.format(news['date'], news['title'], news['source'], news['summary'])
         handler_input.response_builder.speak(message)
         return handler_input.response_builder.response
@@ -138,7 +138,7 @@ class KeyStatsIntentHandler(AbstractRequestHandler):
         logger.info("In GetKeyStatHandler")
         company = util.get_resolved_value(handler_input.request_envelope.request, "company")
         symbol = util.get_stock_symbol(company)
-        key_stats = util.get_stock_keystats(symbol)
+        key_stats = util.get_stock_keystats(symbol).json()
         message = data.KEYSTATS_MESSAGE.format(key_stats['name'], key_stats['yearHigh'], key_stats['yearLow'],
             key_stats['yearChange'], key_stats['latestEPS'], key_stats['latestEPSDate'], key_stats['peRatioHigh'],
             key_stats['peRatioLow'], key_stats['priceToSale'], key_stats['priceToBook'], key_stats['day200MovingAvg'],
