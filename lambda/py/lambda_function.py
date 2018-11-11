@@ -106,8 +106,8 @@ class QuoteIntentHandler(AbstractRequestHandler):
         company = util.get_resolved_value(handler_input.request_envelope.request, "company")
         symbol = util.get_stock_symbol(company)
         quote = util.get_stock_quote(symbol)
-        message = data.QUOTE_MESSAGE.format(quote['symbol'], quote['name'], quote['sector'], quote['primary_exchange'], 
-            quote['open_price'], quote['current_price'], quote['change_percentage'])
+        message = data.QUOTE_MESSAGE.format(quote['symbol'], quote['companyName'], quote['sector'], quote['primaryExchange'], 
+            quote['open'], quote['latestPrice'], quote['changePercent'])
         handler_input.response_builder.speak(message)
         return handler_input.response_builder.response
 
@@ -123,7 +123,7 @@ class NewsIntentHandler(AbstractRequestHandler):
         company = util.get_resolved_value(handler_input.request_envelope.request, "company")
         symbol = util.get_stock_symbol(company)
         news = util.get_stock_news(symbol)
-        message = data.NEWS_MESSAGE.format(news['date'], news['title'], news['source'])
+        message = data.NEWS_MESSAGE.format(news['datetime'], news['headline'], news['source'])
         handler_input.response_builder.speak(message)
         return handler_input.response_builder.response
 
