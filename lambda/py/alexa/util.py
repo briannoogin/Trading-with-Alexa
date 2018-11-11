@@ -60,10 +60,7 @@ def get_stock_keystats(stock_symbol):
 def get_stock_price(stock_symbol):
     # type: (String) -> json
     price_data = requests.get(BASE_URL + stock_symbol + PRICE_URL)
-    return_price_data = {
-        'price' : price_data['price']
-    }
-    return json.dumps(return_price_data)
+    return price_data
 
 # (INCORRECT, FIX!!) Return the stock ticker symbol of a company
 def get_stock_symbol(company_Name):
