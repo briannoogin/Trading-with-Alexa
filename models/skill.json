@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "acm stocks",
+            "invocationName": "stock informing",
             "intents": [
                 {
                     "name": "AMAZON.FallbackIntent",
@@ -12,49 +12,43 @@
                 {
                     "name": "AMAZON.CancelIntent",
                     "samples": [
-                        "scratch that",
-                        "forget it",
+                        "cancel",
                         "never mind",
-                        "cancel"
+                        "forget it",
+                        "scratch that"
                     ]
                 },
                 {
                     "name": "AMAZON.HelpIntent",
                     "samples": [
-                        "can you help me",
-                        "help me",
+                        "i need some help",
                         "help",
-                        "i need some help"
+                        "help me",
+                        "can you help me"
                     ]
                 },
                 {
                     "name": "AMAZON.StopIntent",
                     "samples": [
-                        "stop yapping",
-                        "quit your yapping",
-                        "shut your trap",
-                        "shut it",
+                        "exit",
+                        "stop",
                         "quiet",
-                        "shut up",
-                        "stop"
-                    ]
-                },
-                {
-                    "name": "AMAZON.PauseIntent",
-                    "samples": [
-                        "wait",
-                        "pause",
-                        "wait a minute",
-                        "hold that thought",
-                        "hold"
+                        "shut it",
+                        "shut your trap",
+                        "quit your yapping",
+                        "stop yapping"
                     ]
                 },
                 {
                     "name": "AMAZON.NavigateHomeIntent",
-                    "samples": []
+                    "samples": [
+                        "exit",
+                        "go home",
+                        "close"
+                    ]
                 },
                 {
-                    "name": "quote",
+                    "name": "QuoteIntent",
                     "slots": [
                         {
                             "name": "company",
@@ -62,13 +56,19 @@
                         }
                     ],
                     "samples": [
+                        "tell me about {company}",
+                        "give me information on {company}",
                         "how is {company} doing",
-                        "give me information on {company} ",
-                        "tell me about {company} "
+                        "{company}",
+                        "give me the quote on {company}",
+                        "what is the quote on {company}",
+                        "quote for {company}",
+                        "quote on {company}",
+                        "quote {company}"
                     ]
                 },
                 {
-                    "name": "news",
+                    "name": "NewsIntent",
                     "slots": [
                         {
                             "name": "company",
@@ -76,14 +76,17 @@
                         }
                     ],
                     "samples": [
-                        "news {company}",
+                        "can you give me news on {company}",
+                        "give me the latest news on {company}",
                         "news on {company}",
-                        "give me the latest news on {company} ",
-                        "can you give me news on {company} "
+                        "news {company}",
+                        "news for {company}",
+                        "what is the news for {company}",
+                        "what is the latest news for {company}"
                     ]
                 },
                 {
-                    "name": "keystats",
+                    "name": "KeyStatsIntent",
                     "slots": [
                         {
                             "name": "company",
@@ -91,15 +94,20 @@
                         }
                     ],
                     "samples": [
-                        "key stats on {company}",
+                        "give me the key numbers on {company}",
+                        "what are the key stats on {company}",
                         "give me key stats on {company}",
-                        "what are the key stats on {company} stock",
-                        "give me key stats on {company} stock",
-                        "give me the numbers on {company}"
+                        "key stats on {company}",
+                        "what are the key stats on {company}",
+                        "key stats {company}",
+                        "key stats on {company}",
+                        "key stats {company}",
+                        "give me key stats for {company}",
+                        "give me a rundown for {company}"
                     ]
                 },
                 {
-                    "name": "price",
+                    "name": "TrendStatsIntent",
                     "slots": [
                         {
                             "name": "company",
@@ -107,10 +115,33 @@
                         }
                     ],
                     "samples": [
-                        "price {company}",
-                        "price of {company}",
+                        "give me the trend stats on {company}",
+                        "give me the trend statistics on {company}",
+                        "what are the trend stats on {company}",
+                        "what are the trend statistics on {company}",
+                        "trend stats on {company}",
+                        "trend statistics on {company}",
+                        "what are the trends for {company}",
+                        "what are the trends for {company} stock",
+                        "give me the key trends on {company} stock",
+                        "give me the key trends on {company}"
+                    ]
+                },
+                {
+                    "name": "PriceIntent",
+                    "slots": [
+                        {
+                            "name": "company",
+                            "type": "AMAZON.Corporation"
+                        }
+                    ],
+                    "samples": [
+                        "what is the price of {company} stock",
                         "price of {company} stock",
-                        "what is the price of {company} stock"
+                        "price of {company}",
+                        "price {company}",
+                        "give me the price {company} stock",
+                        "give me price information on {company}"
                     ]
                 }
             ],
