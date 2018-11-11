@@ -123,7 +123,7 @@ class NewsIntentHandler(AbstractRequestHandler):
         company = util.get_resolved_value(handler_input.request_envelope.request, "company")
         symbol = util.get_stock_symbol(company)
         news = util.get_stock_news(symbol)
-        message = data.NEWS_MESSAGE.format(news['date'], news['title'], news['source'], news['summary'])
+        message = data.NEWS_MESSAGE.format(news['date'], news['title'], news['source'])
         handler_input.response_builder.speak(message)
         return handler_input.response_builder.response
 
