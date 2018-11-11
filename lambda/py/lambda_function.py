@@ -105,7 +105,7 @@ class QuoteIntentHandler(AbstractRequestHandler):
         logger.info("In GetQuoteHandler")
         company = util.get_resolved_value(handler_input.request_envelope.request, "company")
         symbol = util.get_stock_symbol(company)
-        quote = util.get_stock_quote(symbol).json()
+        quote = util.get_stock_quote(symbol)
         message = data.QUOTE_MESSAGE.format(quote['symbol'], quote['name'], quote['sector'], quote['primary_exchange'], 
             quote['open_price'], quote['current_price'], quote['change_percentage'])
         handler_input.response_builder.speak(message)
@@ -122,7 +122,7 @@ class NewsIntentHandler(AbstractRequestHandler):
         logger.info("In GetNewsHandler")
         company = util.get_resolved_value(handler_input.request_envelope.request, "company")
         symbol = util.get_stock_symbol(company)
-        news = util.get_stock_news(symbol).json()
+        news = util.get_stock_news(symbol)
         message = data.NEWS_MESSAGE.format(news['date'], news['title'], news['source'], news['summary'])
         handler_input.response_builder.speak(message)
         return handler_input.response_builder.response
@@ -138,11 +138,31 @@ class KeyStatsIntentHandler(AbstractRequestHandler):
         logger.info("In GetKeyStatHandler")
         company = util.get_resolved_value(handler_input.request_envelope.request, "company")
         symbol = util.get_stock_symbol(company)
-        key_stats = util.get_stock_keystats(symbol).json()
-        message = data.KEYSTATS_MESSAGE.format(key_stats['name'], key_stats['yearHigh'], key_stats['yearLow'],
-            key_stats['yearChange'], key_stats['latestEPS'], key_stats['latestEPSDate'], key_stats['peRatioHigh'],
-            key_stats['peRatioLow'], key_stats['priceToSale'], key_stats['priceToBook'], key_stats['day200MovingAvg'],
-            key_stats['day50MovingAvg'])
+        key_stats = util.get_stock_keystats(symbol)
+        message = data.KEYSTATS_MESSAGE.format(key_stats['companyName'], key_stats['institutionPercent'], key_stats['yearHigh'], key_stats['yearLow'],
+            key_stats['yearChange'], key_stats['latestEPS'], key_stats['latestEPSDate'], key_stats['consensusEPS'], key_stats['dividendRate'], 
+            key_stats['dividendYield'], key_stats['EBITDA'], key_stats['peRatioHigh'], key_stats['peRatioLow'], key_stats['priceToSales'], 
+            key_stats['priceToBook'])
+        handler_input.response_builder.speak(message)
+        return handler_input.response_builder.response
+
+class TrendStatsIntentHandler(AbstractRequestHandler):
+    # Handler for Trend Stats Intent
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return is_intent_name("TrendStatsIntent")(handler_input)
+    
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        logger.info("In TrendStatsHandler")
+        company = util.get_resolved_value(handler_input.request_envelope.request, "company")
+        symbol = util.get_stock_symbol(company)
+        trend_stats = util.get_stock_trendstats(symbol)
+        message = data.TRENDSTATS_MESSAGE.format(trend_stats['companyName'], trend_stats['week52high'], trend_stats['week52low'], 
+             trend_stats['week52change'], trend_stats['EBITDA'], trend_stats['day200MovingAvg'], trend_stats['day50MovingAvg'],
+             trend_stats['year5ChangePercent'], trend_stats['year2ChangePercent'], trend_stats['year1ChangePercent'], 
+             trend_stats['month6ChangePercent'], trend_stats['month3ChangePercent'], trend_stats['month1ChangePercent'],
+             trend_stats['day5ChangePercent'])
         handler_input.response_builder.speak(message)
         return handler_input.response_builder.response
 
@@ -179,6 +199,7 @@ skill.add_request_handler(LaunchRequestHandler())
 skill.add_request_handler(QuoteIntentHandler())
 skill.add_request_handler(NewsIntentHandler())
 skill.add_request_handler(KeyStatsIntentHandler())
+skill.add_request_handler(TrendStatsIntentHandler())
 skill.add_request_handler(PriceIntentHandler())
 skill.add_request_handler(HelpIntentHandler())
 skill.add_request_handler(ExitIntentHandler())
