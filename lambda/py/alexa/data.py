@@ -18,7 +18,7 @@ NEWS_MESSAGE = (
     "Dated {}. "
     "The headline is: {}. "
     "Sourced by {}. "
-    "Here's a summary: {}."
+    #"Here's a summary: {}."
     )
 KEYSTATS_MESSAGE = (
     "Here are the key stats: "
