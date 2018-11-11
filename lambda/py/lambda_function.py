@@ -158,7 +158,7 @@ class PriceIntentHandler(AbstractRequestHandler):
         company = util.get_resolved_value(handler_input.request_envelope.request, "company")
         symbol = util.get_stock_symbol(company)
         price = util.get_stock_price(symbol)
-        message = data.PRICE_MESSAGE.format(company, price['price'])
+        message = data.PRICE_MESSAGE.format(company, price)
         handler_input.response_builder.speak(message)
         return handler_input.response_builder.response
 
