@@ -18,19 +18,36 @@ NEWS_MESSAGE = (
     "Dated {}. "
     "The headline is: {}. "
     "Sourced by {}. "
-    "Here's a summary: {}."
+    #"Here's a summary: {}."
     )
 KEYSTATS_MESSAGE = (
     "Here are the key stats: "
     "The company name is {}. "
-    "The year highs and lows are ${} and ${} respectively. "
-    "The yearly change in price is {}%. "
+    "Its institution percent is {}. "
+    "Year highs and lows are ${} and ${} respectively. "
+    "The yearly change in price is {} percent. "
     "Latest earnings per share is ${} as of {}. "
+    "Consensus EPS is ${}. "
+    "The dividend rate is {} and the dividend yield is ${}. "
+    "Earnings before interest, tax, depreciation, and amortization is ${}. "
     "The price to earnings ratio highs and lows are {} and {} respectively. "
-    "The price to book ratio is {} and the price to sales ratio is {}. "
+    "The price to sales ratio is {} and the price to book ratio is {}."
+    )
+TRENDSTATS_MESSAGE = (
+    "Here are the trend stats: "
+    "The company name is {}. "
+    "Year highs and lows are ${} and ${} respectively. "
+    "The yearly change in price is {} percent. "
+    "Earnings before interest, tax, depreciation, and amortization is ${}."
     "The day 200 moving average is ${}. "
     "The day 50 moving average is ${}. "
-    )
+    "Year 5 change is {} percent. "
+    "Year 2 change is {} percent. "
+    "Year 1 change is {} percent. "
+    "Month 6 change is {} percent. "
+    "Month 1 change is {} percent. "
+    "Day 5 change is {} percent."
+)
 PRICE_MESSAGE = (
     "The current stock price for {} is ${}."
     )
