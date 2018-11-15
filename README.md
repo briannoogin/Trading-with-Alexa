@@ -4,13 +4,13 @@ Team members will use Alexa SDK and TradeStation API to trade on the stock marke
 
 ## Table of Contents
    
- * Introduction
- * Built With
- * Dependencies
- * Installation
- * License
- * Attribution
- * Authors
+ * [Introduction](###introduction)
+ * [Built With](###built-with)
+ * [Dependencies](###dependencies)
+ * [Installation](###installation)
+ * [License](###license)
+ * [Attribution](###attribution)
+ * [Authors](###authors)
 
 
 ### Introduction
@@ -18,7 +18,7 @@ Team members will use Alexa SDK and TradeStation API to trade on the stock marke
 
  There is a lack of user-friendly tools to retrieve stock information real-time and websites often become too complex to navigate. The Trading with Alexa Skill is a user friendly application that gives real-time stock information and allows users to make more informed investment decisions and at the very least, educate users on the state of the stock market.
 
-### Built With
+### Built-With
 ------------
 
  * [Alexa Skills Kit](https://developer.amazon.com/alexa-skills-kit "Alexa Skill Kit Homepage") - The Skills Kit
