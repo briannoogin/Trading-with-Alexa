@@ -28,7 +28,8 @@ Team members will use Alexa SDK and TradeStation API to trade on the stock marke
 ### Dependencies
 ----------------
 
-Please see the [requirements.txt](requirements.txt) file for all dependencies
+Please see the [requirements.txt](requirements.txt) file for all dependencies.
+
 You will also need:
    * An Amazon Echo or other Alexa-enabled device
    * An AWS account (AWS Lambda, Alexa-skill configuration, optional Cloudwatch logging)
