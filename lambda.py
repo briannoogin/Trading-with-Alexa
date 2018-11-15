@@ -17,7 +17,6 @@ skill = SkillBuilder()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
-
 # Built-In Intent Handlers
 class LaunchRequestHandler(AbstractRequestHandler):
     # Handler for Skill Launch
@@ -30,7 +29,6 @@ class LaunchRequestHandler(AbstractRequestHandler):
         logger.info("In LaunchRequestHandler")
         handler_input.response_builder.speak(data.WELCOME_MESSAGE).set_should_end_session(False)
         return handler_input.response_builder.response
-
 
 class HelpIntentHandler(AbstractRequestHandler):
     # Handler for Help Intent
@@ -47,7 +45,6 @@ class HelpIntentHandler(AbstractRequestHandler):
         handler_input.response_builder.speak(data.HELP_MESSAGE).ask(data.HELP_PROMPT).set_should_end_session(False)
         return handler_input.response_builder.response
 
-
 class ExitIntentHandler(AbstractRequestHandler):
     # Handler for Cancel, Pause, or Stop Intents
     def can_handle(self, handler_input):
@@ -62,7 +59,6 @@ class ExitIntentHandler(AbstractRequestHandler):
         handler_input.response_builder.speak(data.STOP_MESSAGE).set_should_end_session(True)
         return handler_input.response_builder.response
 
-
 class FallbackIntentHandler(AbstractRequestHandler):
     # Handler for Fallback Intent
     def can_handle(self, handler_input):
@@ -74,7 +70,6 @@ class FallbackIntentHandler(AbstractRequestHandler):
         logger.info("In FallbackIntentHandler")
         handler_input.response_builder.speak(data.FALLBACK_MESSAGE).ask(data.FALLBACK_PROMPT).set_should_end_session(False)
         return handler_input.response_builder.response
-
 
 class SessionEndedRequestHandler(AbstractRequestHandler):
     # Handler for Session End
@@ -88,7 +83,6 @@ class SessionEndedRequestHandler(AbstractRequestHandler):
         logger.info("Session ended reason: {}".format(handler_input.request_envelope.request.reason))
         return handler_input.response_builder.response
 
-
 class CatchAllExceptionsHandler(AbstractExceptionHandler):
     # Handler for all Exceptions
     def can_handle(self, handler_input, exception):
@@ -101,7 +95,6 @@ class CatchAllExceptionsHandler(AbstractExceptionHandler):
         logger.error(exception, exc_info=True)
         handler_input.response_builder.speak(data.EXCEPTION_MESSAGE).ask(data.HELP_PROMPT)
         return handler_input.response_builder.response
-
 
 # Custom Intent Handlers
 class QuoteIntentHandler(AbstractRequestHandler):
@@ -124,7 +117,6 @@ class QuoteIntentHandler(AbstractRequestHandler):
         handler_input.response_builder.speak(message).set_should_end_session(False)
         return handler_input.response_builder.response
 
-
 class NewsIntentHandler(AbstractRequestHandler):
     # Handler for News Intent
     def can_handle(self, handler_input):
@@ -144,7 +136,6 @@ class NewsIntentHandler(AbstractRequestHandler):
         message = data.NEWS_MESSAGE.format(news['headline'], news['source'])
         handler_input.response_builder.speak(message).set_should_end_session(False)
         return handler_input.response_builder.response
-
 
 class KeyStatsIntentHandler(AbstractRequestHandler):
     # Handler for Key Stats Intent
@@ -171,7 +162,6 @@ class KeyStatsIntentHandler(AbstractRequestHandler):
         handler_input.response_builder.speak(message).set_should_end_session(False)
         return handler_input.response_builder.response
 
-
 class TrendStatsIntentHandler(AbstractRequestHandler):
     # Handler for Trend Stats Intent
     def can_handle(self, handler_input):
@@ -197,7 +187,6 @@ class TrendStatsIntentHandler(AbstractRequestHandler):
         handler_input.response_builder.speak(message).set_should_end_session(False)
         return handler_input.response_builder.response
 
-
 class PriceIntentHandler(AbstractRequestHandler):
     # Handler for Price Intent
     def can_handle(self, handler_input):
@@ -218,20 +207,17 @@ class PriceIntentHandler(AbstractRequestHandler):
         handler_input.response_builder.speak(message).set_should_end_session(False)
         return handler_input.response_builder.response
 
-
 class RequestLogger(AbstractRequestInterceptor):
     # Log Alexa Requests
     def process(self, handler_input):
         # type: (HandlerInput) -> None
         logger.debug("Alexa Request: {}".format(handler_input.request_envelope.request))
 
-
 class ResponseLogger(AbstractResponseInterceptor):
     # Log Alexa Responses
     def process(self, handler_input, response):
         # type: (HandlerInput) -> None
         logger.debug("Alexa Response: {}".format(response))
-
 
 # Register all request handlers to the skill
 skill.add_request_handler(LaunchRequestHandler())
@@ -244,7 +230,6 @@ skill.add_request_handler(HelpIntentHandler())
 skill.add_request_handler(FallbackIntentHandler())
 skill.add_request_handler(ExitIntentHandler())
 skill.add_request_handler(SessionEndedRequestHandler())
-
 
 # Register exception handler to the skill
 skill.add_exception_handler(CatchAllExceptionsHandler())
