@@ -4,7 +4,6 @@ WELCOME_MESSAGE = (
     "Welcome to Stock Informing with Alexa! "
     "This skill helps inform the user of the current state of a company's stock."
     )
-
 QUOTE_MESSAGE = (
     "Here's your quote: "
     "The stock symbol is {}. "
@@ -46,7 +45,6 @@ TRENDSTATS_MESSAGE = (
     "Month 1 change is {} percent. "
     "Day 5 change is {} percent."
     )
-
 PRICE_MESSAGE = (
     "The current stock price for {} is ${}."
     )
