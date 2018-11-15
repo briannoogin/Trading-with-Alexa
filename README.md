@@ -6,7 +6,7 @@ Team members will use Alexa SDK and TradeStation API to trade on the stock marke
    
  * [Introduction](#introduction)
  * [Built With](#built-with)
- * [Requirements](#requirements)
+ * [Dependencies](#dependencies)
  * [Installation](#installation)
  * [License](#license)
  * [Attribution](#attribution)
@@ -29,9 +29,21 @@ Team members will use Alexa SDK and TradeStation API to trade on the stock marke
 ----------------
 
 Please see the [requirements.txt](requirements.txt) file for all dependencies
+You will also need:
+   * An Amazon Echo or other Alexa-enabled device
+   * An AWS account (AWS Lambda, Alexa-skill configuration, optional Cloudwatch logging)
 
 ### Installation
 ----------------
+* Create a Python virtual environment, and install the contents of the requirements.txt file into it using `pip`
+* Zip the contents of the `site-packages` folder within your virtual environment (remember, zip the contents of the director, not the directory itself)
+* Add the contents of lambda/py to the zip file also (alexa/.. and lambda_function.py)
+* Once this zip is ready, create your Lambda function using AWS Lambda (a quick google search should return some useful guides)
+* Create your Alexa skill, and when editing intents, you can use "manual edit", and paste in the contents of the models/skill.json file
+* Take the skill ID of the Alexa skill, and add "Alexa Skills Kit" as a trigger in your Lambda function. Enable Skill ID verification, and paste in your skill ID.
+* Under `Endpoints` in the Alexa skill, paste the ARN of your Lambda function.
+
+You should be good to test it at this point! We recommend using the built-in `Test` console on the Alexa skill before you load it on your own Alexa. 
 
 ### License
 -----------
