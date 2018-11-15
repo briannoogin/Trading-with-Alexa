@@ -6,7 +6,7 @@ Team members will use Alexa SDK and TradeStation API to trade on the stock marke
    
  * [Introduction](#introduction)
  * [Built With](#built-with)
- * [Dependencies](#dependencies)
+ * [Requirements](#requirements)
  * [Installation](#installation)
  * [License](#license)
  * [Attribution](#attribution)
