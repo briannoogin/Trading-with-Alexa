@@ -16,8 +16,9 @@ QUOTE_MESSAGE = (
     )
 NEWS_MESSAGE = (
     "Here's the news: "
-    "The headline is: {}. "
-    "Sourced by {}. "
+    "{}. "
+    "Sourced by {} "
+    "on {}."
     )
 KEYSTATS_MESSAGE = (
     "Here are the key stats: "
