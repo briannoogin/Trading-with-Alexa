@@ -85,7 +85,7 @@ def get_decimal_value(decimal_value):
     # type: (Double) -> double
 
     # Format decimal value
-    output_value = Decimal(decimal_value.quantize(Decimal('.01'), rounding = ROUND_HALF_UP))
+    output_value = Decimal(decimal_value).quantize(Decimal('.01'), rounding = ROUND_HALF_UP)
 
     # Return formatted value
     return output_value
