@@ -42,7 +42,6 @@
                 {
                     "name": "AMAZON.NavigateHomeIntent",
                     "samples": [
-                        "exit",
                         "go home",
                         "close"
                     ]
@@ -98,9 +97,6 @@
                         "what are the key stats on {company}",
                         "give me key stats on {company}",
                         "key stats on {company}",
-                        "what are the key stats on {company}",
-                        "key stats {company}",
-                        "key stats on {company}",
                         "key stats {company}",
                         "give me key stats for {company}",
                         "give me a rundown for {company}"
@@ -123,8 +119,8 @@
                         "trend statistics on {company}",
                         "what are the trends for {company}",
                         "what are the trends for {company} stock",
-                        "give me the key trends on {company} stock",
-                        "give me the key trends on {company}"
+                        "give me the trends on {company} stock",
+                        "give me the trends on {company}"
                     ]
                 },
                 {
