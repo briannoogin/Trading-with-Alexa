@@ -25,7 +25,7 @@ Team members will use Alexa SDK and TradeStation API to trade on the stock marke
  * [IEX Trading API](https://iextrading.com/developer/docs/ "IEX API Documentation") - Used to retrieve stock data
  * [Yahoo Finance API](https://finance.yahoo.com/ "Yahoo Finance Homepage") - Used to convert company name to respective stock ticker symbol
 
-### Requirements
+### Dependencies
 ----------------
 
 Please see the [requirements.txt](requirements.txt) file for all dependencies
