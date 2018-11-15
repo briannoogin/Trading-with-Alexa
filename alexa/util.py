@@ -39,7 +39,7 @@ def get_stock_price(stock_symbol):
     return requests.get(BASE_URL + stock_symbol + PRICE_URL).json()
 
 
-# (INCORRECT, FIX!!) Return the stock ticker symbol of a company
+# Return the stock ticker symbol of a company
 def get_stock_symbol(company_name):
     request_url = 'http://d.yimg.com/autoc.finance.yahoo.com/autoc?query={}&region=1&lang=en'.format(company_name)
     return requests.get(request_url).json()
