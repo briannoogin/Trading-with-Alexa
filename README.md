@@ -8,6 +8,7 @@ Team members will use Alexa SDK and TradeStation API to trade on the stock marke
  * Built With
  * Dependencies
  * Installation
+ * License
  * Attribution
  * Authors
 
@@ -27,17 +28,20 @@ Team members will use Alexa SDK and TradeStation API to trade on the stock marke
 ### Requirements
 ----------------
 
-Please see requirements.txt for all dependencies
+Please see the [requirements.txt](requirements.txt) file for all dependencies
 
 ### Installation
 ----------------
 
+### License
+-----------
 
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ### Attribution
 ---------------
 
- * Data provided for free by IEX. View IEX’s [Terms of Use](https://iextrading.com/api-exhibit-a/ "IEX Terms of Use"1).
+ * Data provided for free by IEX. View IEX’s [Terms of Use](https://iextrading.com/api-exhibit-a/ "IEX Terms of Use").
  * Company to symbol conversion provided for free by [Yahoo Finance](https://finance.yahoo.com/ "Yahoo Finance Homepage").
 
 ### Authors
