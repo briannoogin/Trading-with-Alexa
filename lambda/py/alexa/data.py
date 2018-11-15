@@ -17,6 +17,7 @@ QUOTE_MESSAGE = (
 NEWS_MESSAGE = (
     "Here's the news: "
     "{}. "
+    "Here is a summary: {}"
     "Sourced by {} "
     "on {}."
     )
