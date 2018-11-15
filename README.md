@@ -39,7 +39,7 @@ You will also need:
 * Zip the contents of the `site-packages` folder within your virtual environment (remember, zip the contents of the director, not the directory itself)
 * Add the contents of lambda/py to the zip file also (alexa/.. and lambda_function.py)
 * Once this zip is ready, create your Lambda function using AWS Lambda (a quick google search should return some useful guides, [see this guide](https://github.com/alexa/skill-sample-python-city-guide/blob/master/instructions/2-lambda-function.md))
-* Create your Alexa skill, and when editing intents, you can use "manual edit", and paste in the contents of the models/skill.json file
+* Create your Alexa skill, and when editing intents, you can use "manual edit", and paste in the contents of the models/skill.json file ([see this guide](https://github.com/alexa/skill-sample-python-city-guide/blob/master/instructions/1-voice-user-interface.md))
 * Take the skill ID of the Alexa skill, and add "Alexa Skills Kit" as a trigger in your Lambda function. Enable Skill ID verification, and paste in your skill ID.
 * Under `Endpoints` in the Alexa skill, paste the ARN of your Lambda function.
 
