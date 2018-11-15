@@ -21,11 +21,9 @@ Team members will use Alexa SDK and TradeStation API to trade on the stock marke
 ### Built With
 ------------
 
- *[Alexa Skills Kit](https://developer.amazon.com/alexa-skills-kit "Alexa Skill Kit Homepage") - The Skills Kit
-
- *[IEX Trading API](https://iextrading.com/developer/docs/ "IEX API Documentation") - Used to retrieve stock data
- 
- *[Yahoo Finance API](https://finance.yahoo.com/ "Yahoo Finance Homepage") - Used to convert company name to respective stock ticker symbol
+ * [Alexa Skills Kit](https://developer.amazon.com/alexa-skills-kit "Alexa Skill Kit Homepage") - The Skills Kit
+ * [IEX Trading API](https://iextrading.com/developer/docs/ "IEX API Documentation") - Used to retrieve stock data
+ * [Yahoo Finance API](https://finance.yahoo.com/ "Yahoo Finance Homepage") - Used to convert company name to respective stock ticker symbol
 
 ### Requirements
 ----------------
