@@ -49,5 +49,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) f
 
  * Madhav Mehta
  * Sabal Ranabhat
+ * Cameron O'Brien
  * Karina Scott
  * Yohan Flores
+ * Brian Nguyen
