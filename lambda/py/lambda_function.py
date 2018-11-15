@@ -184,7 +184,7 @@ class NewsIntentHandler(AbstractRequestHandler):
         logger.debug("Got stock news of of {}".format(company))
 
         # Create message for news
-        message = data.NEWS_MESSAGE.format(news['headline'], news['source'])
+        message = data.NEWS_MESSAGE.format(news['headline'], news['source'], news['datetime'])
 
         # Return message for news
         handler_input.response_builder.speak(message).set_should_end_session(False)
