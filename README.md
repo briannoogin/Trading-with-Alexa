@@ -55,6 +55,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) f
 
  * Data provided for free by IEX. View IEX’s [Terms of Use](https://iextrading.com/api-exhibit-a/ "IEX Terms of Use").
  * Company to symbol conversion provided for free by [Yahoo Finance](https://finance.yahoo.com/ "Yahoo Finance Homepage").
+ <a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img src="https://poweredby.yahoo.com/white.png" width="134" height="29"/> </a>
 
 ### Authors
 -----------
