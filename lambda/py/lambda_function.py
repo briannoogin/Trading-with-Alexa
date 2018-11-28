@@ -312,6 +312,34 @@ class PriceIntentHandler(AbstractRequestHandler):
         # Return price response
         handler_input.response_builder.speak(message).set_should_end_session(False)
         return handler_input.response_builder.response
+        
+
+class BuyIntentHandler(AbstractRequestHandler):
+    # Handler for Buy Intent
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return is_intent_name("BuyIntent")(handler_input)
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        logger.info("In BuyIntentHandler")
+
+        # Get user's input for company slot from Alexa
+        company = util.get_resolved_value(handler_input.request_envelope.request, "company")
+        quantity = util.get_resolved_value(handler_input.request_envlope.request, "quantity")
+
+        # Get stock symbol of company
+        s = util.get_stock_symbol(company)
+        symbol = s['ResultSet']['Result'][0]['symbol']
+
+        # Get stock price using symbol
+        price = util.get_stock_price(symbol)
+
+        # Create message for stock bought
+        message = data.BUY_MESSAGE.format(quantity, company, price)
+
+        # Return buy response
+        handler_input.response_builder.speak(message).set_should_end_session(False)
+        return handler_input.response_builder.response
 
 
 class RequestLogger(AbstractRequestInterceptor):
