@@ -23,6 +23,7 @@
  * [Alexa Skills Kit](https://developer.amazon.com/alexa-skills-kit "Alexa Skill Kit Homepage") - The Skills Kit
  * [IEX Trading API](https://iextrading.com/developer/docs/ "IEX API Documentation") - Used to retrieve stock data
  * [Yahoo Finance API](https://finance.yahoo.com/ "Yahoo Finance Homepage") - Used to convert company name to respective stock ticker symbol
+ * [IBM Watson Tone Analyzer](https://www.ibm.com/watson/services/tone-analyzer/ "Watson Tone Analzyer Page") - Used to analyze tone in news articles
 
 ### Dependencies
 ----------------
