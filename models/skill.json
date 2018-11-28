@@ -139,6 +139,25 @@
                         "give me the price {company} stock",
                         "give me price information on {company}"
                     ]
+                },
+                {
+                    "name": "BuyIntent",
+                    "slots": [
+                        {
+                            "name": "company",
+                            "type": "AMAZON.Corporation"
+                        },
+                        {
+                            "name": "quantity",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "Buy {quantity} shares from {company}",
+                        "Buy me {quantity} shares from {company}",
+                        "I want {quantity} shares from {company}",
+                        "Buy {quantity} shares {company}"
+                    ]
                 }
             ],
             "types": []
