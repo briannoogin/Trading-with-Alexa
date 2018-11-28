@@ -47,6 +47,11 @@ TRENDSTATS_MESSAGE = (
     "Month 1 change is {} percent. "
     "Day 5 change is {} percent."
     )
+BUY_MESSAGE = (
+    "You bought {} shares "
+    "from {} "
+    "for {}."
+    )
 PRICE_MESSAGE = (
     "The current stock price for {} is ${}."
     )
