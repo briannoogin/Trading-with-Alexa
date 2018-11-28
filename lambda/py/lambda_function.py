@@ -184,14 +184,14 @@ class NewsIntentHandler(AbstractRequestHandler):
 
         # Get tone analysis using news summary
         tone_analysis = util.get_tone_analysis(news['summary'])
-        json_tones = json.loads(tone_analysis['document_tone'])
+        json_tones = json.loads(str(tone_analysis))
         logger.debug("Got tone analysis of {}".format(company))
 
         # Create message for tone
         tone_message = ''
-        for k,v in json_tones.items():
-            percent_confidence = util.get_decimal_value(v['score'] * 100)
-            tone_name = v['tone_name']
+        for tone in json_tones['document_tone']['tones']:
+            percent_confidence = util.get_decimal_value(tone['score'] * 100)
+            tone_name = tone['tone_name']
             tone_message += data.TONE_MESSAGE.format(percent_confidence, tone_name)
 
         # Create message for news
