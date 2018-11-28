@@ -325,7 +325,7 @@ class BuyIntentHandler(AbstractRequestHandler):
 
         # Get user's input for company slot from Alexa
         company = util.get_resolved_value(handler_input.request_envelope.request, "company")
-        quantity = util.get_resolved_value(handler_input.request_envlope.request, "quantity")
+        quantity = util.get_resolved_value(handler_input.request_envelope.request, "quantity")
 
         # Get stock symbol of company
         s = util.get_stock_symbol(company)
@@ -363,7 +363,7 @@ skill.add_request_handler(NewsIntentHandler())
 skill.add_request_handler(KeyStatsIntentHandler())
 skill.add_request_handler(PriceIntentHandler())
 skill.add_request_handler(TrendStatsIntentHandler())
-skill.add_request_handler(BuyIntentHandler())
+skill.add_request_handler(BuyIntentHandler() )
 skill.add_request_handler(HelpIntentHandler())
 skill.add_request_handler(FallbackIntentHandler())
 skill.add_request_handler(ExitIntentHandler())
