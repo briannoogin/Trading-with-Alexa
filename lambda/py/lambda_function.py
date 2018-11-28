@@ -1,6 +1,8 @@
 # Import relevant modules
 import json
 import logging
+from datetime import datetime
+
 
 from alexa import data, util
 from ask_sdk_core.skill_builder import SkillBuilder
@@ -346,7 +348,7 @@ class BuyIntentHandler(AbstractRequestHandler):
         price = util.get_stock_price(symbol)
 
         # Create message for stock bought
-        message = data.BUY_MESSAGE.format(quantity, company, price)
+        message = data.BUY_MESSAGE.format(quantity, company, price, datetime.today())
 
         # Return buy response
         handler_input.response_builder.speak(message).set_should_end_session(False)
