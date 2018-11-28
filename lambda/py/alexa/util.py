@@ -92,8 +92,7 @@ def get_tone_analysis(summary_string):
     )
 
     # Tone Analysis JSON
-    tone_analysis = tone_analyzer.tone({'text': summary_string},'application/json').get_result().json()
-
+    tone_analysis = tone_analyzer.tone(text = summary_string, content_type = 'text/plain')
     return tone_analysis
     
 
