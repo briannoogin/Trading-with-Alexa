@@ -87,7 +87,7 @@ def get_tone_analysis(summary_string):
     # Tone Analyzer object
     tone_analyzer = ToneAnalyzerV3(
 	                version = "2018-11-16",
-	                iam_apikey = 'zysPjU3l5tlcf1vvL1eFnDP33H7vFNG0tFDId0qX6QOv',
+	                iam_apikey = 'Insert API Key',
 	                url = 'https://gateway.watsonplatform.net/tone-analyzer/api'
     )
 
