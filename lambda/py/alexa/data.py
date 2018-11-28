@@ -54,7 +54,9 @@ TRENDSTATS_MESSAGE = (
 BUY_MESSAGE = (
     "You bought {} shares "
     "from {} "
-    "for ${} each."
+    "for ${} each. "
+    "Purchased on {}."
+    
     )
 PRICE_MESSAGE = (
     "The current stock price for {} is ${}."
