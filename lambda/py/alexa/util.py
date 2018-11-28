@@ -1,9 +1,11 @@
+from __future__ import absolute_import
 import requests, json
 
 from decimal import Decimal, ROUND_HALF_UP
 
 from ask_sdk_model import IntentRequest
 
+from watson_develop_cloud import ToneAnalyzerV3
 
 # URLs for API requests
 BASE_URL = "https://api.iextrading.com/1.0/stock/"
@@ -12,7 +14,6 @@ QUOTE_URL = "/quote?displayPercent=true"
 NEWS_URL = "/news"
 KEYSTATS_URL = "/stats"
 PRICE_URL = "/price"
-
 
 # Return a quote  for a company's stock
 def get_stock_quote(stock_symbol):
@@ -80,6 +81,21 @@ def get_stock_symbol(company_name):
     # Return symbol
     return stock_symbol
 
+def get_tone_analysis(summary_string):
+    # type: (String) -> json
+
+    # Tone Analyzer object
+    tone_analyzer = ToneAnalyzerV3(
+	                version = "2018-11-16",
+	                iam_apikey = 'zysPjU3l5tlcf1vvL1eFnDP33H7vFNG0tFDId0qX6QOv',
+	                url = 'https://gateway.watsonplatform.net/tone-analyzer/api'
+    )
+
+    # Tone Analysis JSON
+    tone_analysis = tone_analyzer.tone({'text': summary_string},'application/json').get_result().json()
+
+    return tone_analysis
+    
 
 def get_decimal_value(decimal_value):
     # type: (Double) -> double

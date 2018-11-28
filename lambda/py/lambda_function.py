@@ -180,11 +180,22 @@ class NewsIntentHandler(AbstractRequestHandler):
 
         # Get stock news using symbol
         news = util.get_stock_news(symbol)
+        logger.debug("Got stock news of {}".format(company))
 
-        logger.debug("Got stock news of of {}".format(company))
+        # Get tone analysis using news summary
+        tone_analysis = util.get_tone_analysis(news['summary'])
+        json_tones = json.loads(tone_analysis['document_tone'])
+        logger.debug("Got tone analysis of {}".format(company))
+
+        # Create message for tone
+        tone_message = ''
+        for k,v in json_tones.items():
+            percent_confidence = util.get_decimal_value(v['score'] * 100)
+            tone_name = v['tone_name']
+            tone_message += data.TONE_MESSAGE.format(percent_confidence, tone_name)
 
         # Create message for news
-        message = data.NEWS_MESSAGE.format(news['headline'], news['summary'], news['source'], news['datetime'])
+        message = data.NEWS_MESSAGE.format(news['headline'], news['source'], news['datetime'], tone_message)
 
         # Return message for news
         handler_input.response_builder.speak(message).set_should_end_session(False)

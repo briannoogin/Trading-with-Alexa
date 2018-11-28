@@ -17,9 +17,13 @@ QUOTE_MESSAGE = (
 NEWS_MESSAGE = (
     "Here's the news: "
     "{}. "
-    "Here is a summary: {}"
+    # "Here is a summary: {}"
     "Sourced by {} "
-    "on {}."
+    "on {}. "
+    "Tone Analysis: {}."
+    )
+TONE_MESSAGE = (
+    "{} percent confident that the headline had {} tones."
     )
 KEYSTATS_MESSAGE = (
     "Here are the key stats: "
@@ -50,7 +54,7 @@ TRENDSTATS_MESSAGE = (
 BUY_MESSAGE = (
     "You bought {} shares "
     "from {} "
-    "for {}."
+    "for ${} each."
     )
 PRICE_MESSAGE = (
     "The current stock price for {} is ${}."
