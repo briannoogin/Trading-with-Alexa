@@ -1,7 +1,7 @@
 # Standard Alexa Messages
-SKILL_NAME = "Stock Informing"
+SKILL_NAME = "Stock Trading"
 WELCOME_MESSAGE = (
-    "Welcome to Stock Informing with Alexa! "
+    "Welcome to Stock Trading with Alexa! "
     "This skill helps inform the user of the current state of a company's stock."
     )
 QUOTE_MESSAGE = (
@@ -56,7 +56,6 @@ BUY_MESSAGE = (
     "from {} "
     "for ${} each. "
     "Purchased on {}."
-    
     )
 PRICE_MESSAGE = (
     "The current stock price for {} is ${}."
