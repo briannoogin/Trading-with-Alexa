@@ -91,7 +91,7 @@ def get_tone_analysis(summary_string):
 	                url = 'https://gateway.watsonplatform.net/tone-analyzer/api'
     )
 
-    # Tone Analysis JSON
+    # Tone Analysis Dict
     tone_analysis = tone_analyzer.tone(tone_input = summary_string, content_type ='text/html')
     return tone_analysis
     
